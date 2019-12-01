@@ -11,16 +11,18 @@
 </head>
 
 <body>
-    <h1 id="tool">Hello</h1>
-    <button value="Rect" id="rect">rectangle</button>
-    <button id="ellipse" value="ellipse">ellipse</button>
-    <button value="line" id="line">line</button> Stroke:
-    <input type="number" id="stroke" min="0" max="200" value="10"> Color:
-    <input type="color" id="color">
-    <span class="size">Width:<input type="number" id="width" value="10" placeholder="width"></span>
-    <span class="size">Height<input type="number" id="height" value="10" placeholder="height"></span>
-    <button value="erase" id="erase">eraser</button> Background:
-    <input type="color" id="bgcolor" value="#ffffff">
+    <div id="nav">
+        <h1 id="tool">Hello</h1>
+        <button value="Rect" id="rect">rectangle</button>
+        <button id="ellipse" value="ellipse">ellipse</button>
+        <button value="line" id="line">line</button> Stroke:
+        <input type="number" id="stroke" min="0" max="200" value="10"> Color:
+        <input type="color" id="color">
+        <span class="size">Width:<input type="number" id="width" value="10" placeholder="width"></span>
+        <span class="size">Height<input type="number" id="height" value="10" placeholder="height"></span>
+        <button value="erase" id="erase">eraser</button> Background:
+        <input type="color" id="bgcolor" value="#ffffff">
+    </div>
     <canvas id="canvas"></canvas>
     <script src="script.js"></script>
 </body>

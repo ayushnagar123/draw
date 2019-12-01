@@ -3,6 +3,7 @@ window.addEventListener('load', () => {
     const rect = document.getElementById("rect");
     const tool = document.getElementById("tool");
     const line = document.getElementById("line");
+    const nav = document.getElementById("nav");
     const ellipse = document.getElementById("ellipse");
     const width = document.getElementById("width");
     const height = document.getElementById("height");
@@ -10,17 +11,16 @@ window.addEventListener('load', () => {
     const bgcolor = document.getElementById("bgcolor");
     const size = document.querySelectorAll(".size");
     const context = canvas.getContext("2d")
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight - nav.height;
     canvas.width = window.innerWidth;
+    // context.moveTo(nav.style.height, 0)
 
     let painting = false
     setLine()
     setBgColor()
 
     function setBgColor() {
-        console.log(bgcolor.value)
-        context.fillStyle = bgcolor.value
-        context.fillRect(0, 0, canvas.width, canvas.height)
+        canvas.style.backgroundColor = bgcolor.value
     }
 
     function startPosition(e) {
