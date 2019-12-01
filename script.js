@@ -1,4 +1,5 @@
 window.addEventListener('load', () => {
+    console.log('loaded')
     const canvas = document.getElementById("canvas");
     const rect = document.getElementById("rect");
     const tool = document.getElementById("tool");
@@ -8,7 +9,6 @@ window.addEventListener('load', () => {
     const width = document.getElementById("width");
     const height = document.getElementById("height");
     const erase = document.getElementById("erase");
-    const bgcolor = document.getElementById("bgcolor");
     const size = document.querySelectorAll(".size");
     const context = canvas.getContext("2d")
     canvas.height = window.innerHeight - nav.height;
@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
     setBgColor()
 
     function setBgColor() {
-        canvas.style.backgroundColor = bgcolor.value
+        canvas.style.backgroundColor = "#ffffff"
     }
 
     function startPosition(e) {
@@ -111,7 +111,7 @@ window.addEventListener('load', () => {
         context.lineWidth = document.getElementById("stroke").value;
         context.lineCap = "round";
         context.lineTo(e.clientX, e.clientY);
-        context.strokeStyle = bgcolor.value
+        context.strokeStyle = "#ffffff"
         context.stroke();
         context.beginPath();
         context.moveTo(e.clientX, e.clientY);
@@ -141,7 +141,14 @@ window.addEventListener('load', () => {
     line.addEventListener('click', setLine);
     ellipse.addEventListener('click', setEllipse);
     erase.addEventListener('click', setErase);
-    bgcolor.addEventListener('change', setBgColor);
+    // bgcolor.addEventListener('change', setBgColor);
+})
+
+window.addEventListener('load', () => {
+    const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("2d")
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
 })
 
 window.addEventListener('resize', () => {
